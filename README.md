@@ -12,4 +12,5 @@ sudo mv chromedriver /usr/local/bin/chromedriver
 sudo chown root:root /usr/local/bin/chromedriver
 sudo chmod +x /usr/local/bin/chromedriver
 ```
+Установить Chrome
 Запускать командой pytest из директории проекта.
