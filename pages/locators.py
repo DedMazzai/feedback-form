@@ -13,4 +13,5 @@ class FeedbackLocators:
     INPUT_FIELD_NOT_LIKED = (By.CSS_SELECTOR, "[name='comment_minus']")
     FIELD_COMMENT = (By.CSS_SELECTOR, "[name='comment']")
     PHONE_CONFIRM_FIELD = (By.CSS_SELECTOR, ".b-phone-confirm__number")
-    PHONE_CONFIRM_BUTTON = (By.CSS_SELECTOR, ".b-phone-confirm__confirm.b-button.b-button_blue")
+    PHONE_CONFIRM_BUTTON = (By.CSS_SELECTOR, ".b-phone-confirm__confirm > span")
+    CALL_NUMBER_INSCRIPTION = (By.CSS_SELECTOR, ".b-phone-confirm__call-phone")

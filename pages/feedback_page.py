@@ -107,9 +107,6 @@ class FeedbackPage:
     def click_confirm_phone_number_button(self):
         self.app.base_page.click_element(*FeedbackLocators.PHONE_CONFIRM_BUTTON)
 
-    def confirm_phone_number_button_is_not_present(self):
-        self.app.base_page.is_not_element_present(*FeedbackLocators.PHONE_CONFIRM_BUTTON)
-        time.sleep(5)
-
-
-
+    def should_be_call_number_inscription(self):
+        assert self.app.base_page.is_element_present(*FeedbackLocators.CALL_NUMBER_INSCRIPTION), \
+            "CALL NUMBER INSCRIPTION is not present"

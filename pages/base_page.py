@@ -26,11 +26,3 @@ class BasePage:
         browser = self.app.browser
         element = browser.find_element(how, what)
         element.click()
-
-    def is_not_element_present(self, how, what, timeout=4):
-        browser = self.app.browser
-        try:
-            WebDriverWait(browser, timeout).until(EC.presence_of_element_located((how, what)))
-        except TimeoutException:
-            return True
-        return False

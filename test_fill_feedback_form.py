@@ -50,5 +50,5 @@ def test_fill_feedback_form_valid_data(app):
     app.feedback_page.should_be_confirm_phone_number_button()
     # кликнуть по кнопке подтверждения номера телефона
     app.feedback_page.click_confirm_phone_number_button()
-    # проверка что кнопка подтверждения телефона не отображается
-    app.feedback_page.confirm_phone_number_button_is_not_present()
+    # проверка что появилась надпись с предложением перезвонить по бесплатному номеру для подтверждения телефона
+    app.feedback_page.should_be_call_number_inscription()
