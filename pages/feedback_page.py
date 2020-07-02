@@ -1,6 +1,5 @@
 from .locators import FeedbackLocators
 import random
-import time
 
 
 class FeedbackPage:
@@ -31,21 +30,21 @@ class FeedbackPage:
         stars[random_star].click()
 
     def should_be_stars_of_assessment_of_survey_thoroughness(self):
-        assert self.app.base_page.is_element_present(*FeedbackLocators.STARS_SURVEY_THOROUGHNESS),\
+        assert self.app.base_page.is_element_present(*FeedbackLocators.STARS_SURVEY_THOROUGHNESS), \
             "Stars of assessment of survey thoroughness is not present"
 
     def choose_star_of_assessment_of_survey_thoroughness(self):
         self.choose_star_of_assessment(*FeedbackLocators.STARS_SURVEY_THOROUGHNESS)
 
     def should_be_stars_of_assessment_of_treatment_effectiveness(self):
-        assert self.app.base_page.is_element_present(*FeedbackLocators.STARS_TREATMENT_EFFECTIVENESS),\
+        assert self.app.base_page.is_element_present(*FeedbackLocators.STARS_TREATMENT_EFFECTIVENESS), \
             "Stars of assessment of treatment effectiveness is not present"
 
     def choose_star_of_assessment_of_treatment_effectiveness(self):
         self.choose_star_of_assessment(*FeedbackLocators.STARS_TREATMENT_EFFECTIVENESS)
 
     def should_be_stars_of_attitude_towards_the_patient(self):
-        assert self.app.base_page.is_element_present(*FeedbackLocators.ATTITUDE_TOWARDS_THE_PATIENT),\
+        assert self.app.base_page.is_element_present(*FeedbackLocators.ATTITUDE_TOWARDS_THE_PATIENT), \
             "Stars of ATTITUDE TOWARDS THE PATIENT is not present"
 
     def choose_star_of_attitude_towards_the_patient(self):
@@ -93,7 +92,7 @@ class FeedbackPage:
         self.app.base_page.fill_input_field(*FeedbackLocators.FIELD_COMMENT, content)
 
     def should_be_field_for_entering_phone(self):
-        assert  self.app.base_page.is_element_present(*FeedbackLocators.PHONE_CONFIRM_FIELD), \
+        assert self.app.base_page.is_element_present(*FeedbackLocators.PHONE_CONFIRM_FIELD), \
             "PHONE CONFIRM FIELD is not present"
 
     def fill_field_for_entering_phone(self):
@@ -110,3 +109,6 @@ class FeedbackPage:
     def should_be_call_number_inscription(self):
         assert self.app.base_page.is_element_present(*FeedbackLocators.CALL_NUMBER_INSCRIPTION), \
             "CALL NUMBER INSCRIPTION is not present"
+
+    def confirm_phone_number_button_is_disappeared(self):
+        assert self.app.base_page.is_disappeared(*FeedbackLocators.PHONE_CONFIRM_BUTTON)

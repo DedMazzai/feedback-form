@@ -26,3 +26,14 @@ class BasePage:
         browser = self.app.browser
         element = browser.find_element(how, what)
         element.click()
+
+    def is_disappeared(self, how, what, timeout=3):
+        browser = self.app.browser
+        browser.implicitly_wait(0)
+        try:
+            WebDriverWait(browser, timeout). \
+                until_not(EC.presence_of_element_located((how, what)))
+        except TimeoutException:
+            return False
+
+        return True

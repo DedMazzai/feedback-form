@@ -4,7 +4,6 @@ from pages.base_page import BasePage
 from pages.feedback_page import FeedbackPage
 
 
-
 class Application:
     # Инициализация драйвера
     def __init__(self, browser_name, base_url):
@@ -25,13 +24,10 @@ class Application:
         self.base_page = BasePage(self)
         self.feedback_page = FeedbackPage(self)
 
-
-
     # Открытие страницы фомы обратной связи
     def open_base_page(self):
         browser = self.browser
         browser.get(self.base_url)
-
 
     # разрушение Фикстуры
     def destroy(self):

@@ -1,4 +1,3 @@
-
 def test_fill_feedback_form_valid_data(app):
     # открываем тестовую страницу
     app.open_base_page()
@@ -20,7 +19,7 @@ def test_fill_feedback_form_valid_data(app):
     app.feedback_page.choose_star_of_assessment_of_treatment_effectiveness()
     # проверяем что есть звезды для оценки отношения к пациенту
     app.feedback_page.should_be_stars_of_attitude_towards_the_patient()
-    #выбираем рандомно звезду для оценки отношения к пациенту
+    # выбираем рандомно звезду для оценки отношения к пациенту
     app.feedback_page.choose_star_of_attitude_towards_the_patient()
     # проверяем что есть звезды для оценки информирования пациента
     app.feedback_page.should_be_stars_of_assessment_of_patient_informing()
@@ -50,5 +49,7 @@ def test_fill_feedback_form_valid_data(app):
     app.feedback_page.should_be_confirm_phone_number_button()
     # кликнуть по кнопке подтверждения номера телефона
     app.feedback_page.click_confirm_phone_number_button()
+    # проверяем что кнопка подтверждения номера телефона исчезает
+    app.feedback_page.confirm_phone_number_button_is_disappeared()
     # проверка что появилась надпись с предложением перезвонить по бесплатному номеру для подтверждения телефона
     app.feedback_page.should_be_call_number_inscription()
